@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<SplitPane dividerPositions="0.35,0.7" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PharmacyView">
+
+    <!-- Pharmacy -->
+    <items>
+        <VBox spacing="10" VBox.vgrow="ALWAYS">
+            <Label text="Pharmacies" />
+            <TableView fx:id="pharmacyTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="ID" fx:id="pharmacyIdCol" />
+                    <TableColumn text="Name" fx:id="pharmacyNameCol" />
+                    <TableColumn text="Address" fx:id="pharmacyAddressCol" />
+                </columns>
+            </TableView>
+
+            <VBox spacing="5"><padding><Insets top="10" right="10" bottom="10" left="10" /></padding>
+                <Label text="Pharmacy ID:" /><TextField fx:id="pharmacyIdField" />
+                <Label text="Pharmacy Name:" /><TextField fx:id="pharmacyNameField" />
+                <Label text="Pharmacy Address:" /><TextField fx:id="pharmacyAddressField" />
+                <Button fx:id="addPharmacyButton" text="Add Pharmacy" />
+                <Button fx:id="updatePharmacyButton" text="Update Pharmacy" />
+                <Button fx:id="deletePharmacyButton" text="Delete Pharmacy" />
+            </VBox>
+        </VBox>
+
+        <!-- Pharmacy Medicaments -->
+        <VBox spacing="10" VBox.vgrow="ALWAYS">
+            <HBox spacing="10"><padding><Insets top="10" right="10" bottom="10" left="10" /></padding>
+                <Label text="Filter by:" />
+                <ComboBox fx:id="filterComboBox" />
+                <ComboBox fx:id="filterProducerComboBox" />
+                <Button fx:id="filterButton" text="Filter" />
+                <Label text="Unavailable medicaments:" />
+                <Button fx:id="exportCsvButton" text="CSV" />
+                <Button fx:id="exportDocButton" text="DOC" />
+            </HBox>
+
+            <TableView fx:id="pharmacyMedicamentTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Medicament ID" fx:id="medicamentIdCol" />
+                    <TableColumn text="Name" fx:id="medNameCol" />
+                    <TableColumn text="Price" fx:id="medPriceCol" />
+                    <TableColumn text="Producer" fx:id="medProducerCol" />
+                    <TableColumn text="Image" fx:id="medImageCol" />
+                    <TableColumn text="Stock" fx:id="stockCol" />
+                    <TableColumn text="Expiration Date" fx:id="expirationCol" />
+                </columns>
+            </TableView>
+
+            <VBox spacing="5"><padding><Insets top="10" right="10" bottom="10" left="10" /></padding>
+                <Label text="Pharmacy ID:" /><TextField fx:id="addPharmacyIdField" />
+                <Label text="Medicament ID:" /><TextField fx:id="addMedicamentIdField" />
+                <Label text="Stock:" /><TextField fx:id="stockField" />
+                <Label text="Expiration Date:" /><TextField fx:id="expirationDateField" text="YYYY-MM-DD" />
+                <Button fx:id="addPharmacyMedicamentButton" text="Add Medicament" />
+                <Button fx:id="updatePharmacyMedicamentButton" text="Update Medicament" />
+                <Button fx:id="deletePharmacyMedicamentButton" text="Delete Medicament" />
+            </VBox>
+        </VBox>
+
+        <!-- Medicaments -->
+        <VBox spacing="10" VBox.vgrow="ALWAYS">
+            <HBox spacing="10"><padding><Insets top="10" right="10" bottom="10" left="10" /></padding>
+                <Label text="Search:" />
+                <TextField fx:id="searchMedicamentField" />
+                <Button fx:id="searchMedicamentButton" text="Search" />
+                <Button fx:id="cancelSearchMedicamentButton" text="Cancel" />
+            </HBox>
+
+            <TableView fx:id="medicamentTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="ID" fx:id="medIdCol" />
+                    <TableColumn text="Name" fx:id="medNameOnlyCol" />
+                    <TableColumn text="Price" fx:id="medPriceOnlyCol" />
+                    <TableColumn text="Producer" fx:id="medProducerOnlyCol" />
+                    <TableColumn text="Image" fx:id="medImageOnlyCol" />
+                </columns>
+            </TableView>
+
+            <VBox spacing="5"><padding><Insets top="10" right="10" bottom="10" left="10" /></padding>
+                <Label text="Medicament ID:" /><TextField fx:id="medicamentIdField" />
+                <Label text="Name:" /><TextField fx:id="medicamentNameField" />
+                <Label text="Price:" /><TextField fx:id="medicamentPriceField" />
+                <Label text="Producer:" /><ComboBox fx:id="medicamentProducerComboBox" />
+                <Label text="Image Path:" /><TextField fx:id="medicamentImageField" />
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                <Button fx:id="addMedicamentButton" text="Add Medicament" />
+                <Button fx:id="updateMedicamentButton" text="Update Medicament" />
+                <Button fx:id="deleteMedicamentButton" text="Delete Medicament" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </items>
+</SplitPane>
